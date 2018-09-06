@@ -8,7 +8,7 @@ Tôi cá là bạn cũng không biết được câu trả lời.
 Các biến là các hàm đúng không? Mọi người đều  có thể học  mảng này.
 Nhưng bên trên những thứ cơ bản nhất chúng ta có gì?
 Đâu là những thứ quan trọng nhất của Javascript mà bạn nên làm chủ trước khi gọi mình là 1 developer Javascript mức intermediate (hay thậm chí là senior)
-Có rất nhiều thứ: Scope, Closure, Callbacks, Prototype, and so on.
+Có rất nhiều thứ: Scope, Closure, Callbacks, Prototype, và nhiều hơn.
 Nhưng trước khi đi sâu vào những khái niệm này thì ít nhất bạn cần hiểu được cách mà engine Javascript hoạt động đã.
 Trong bài viết này chúng ta sẽ điểm qua 2 thành phần cơ bản của mỗi engine Javascript: the Execution Context và the Call Stack
 (Đừng sợ, nó dễ hơn bạn nghĩ nhiều).
@@ -32,6 +32,13 @@ Nhưng tôi đảm bảo bạn có thể học được nó.
 Và khi bạn càng học, bạn sẽ càng cảm thấy  tự tin và thông minh hơn.
 Bằng cách xem xét những chức năng bên trong của Javascript bạn có thể trở thành 1 Javascript developer tốt hơn, thậm chí ngay cả khi bạn không thể thành thao trong bất kỳ lĩnh vực nào.
 Giờ xem qua đoạn code sau:
+```
+var num = 2;
+
+function pow(num) {
+    return num * num;
+}
+```
 Xong?
 Trông nó không hề khó!
 Giờ hãy nói tôi nghe: bạn nghĩ trình duyệt sẽ xử lý code này theo trình tự nào?
@@ -111,7 +118,7 @@ Với ví dụ nhỏ của tôi thì nó sẽ như thế này:
 Trong phần tiếp theo, chúng ta sẽ tìm hiểu 1 thứ đáng sợ khác : Call Stack
 
 #### Javascript: Execution là gì? Call Stack là gì?
-Bạn đã có 1 cái nhìn rõ ràng về cách mà Execution Context, Global Memory và JS engine họa động với nhau chưa?
+Bạn đã có 1 cái nhìn rõ ràng về cách mà Execution Context, Global Memory và JS engine họat động với nhau chưa?
 Nếu chưa dành thời gian xem lại phần trước nhé
 Giờ chúng tôi sẽ giới thiệu về 1 "miếng ghép" khác: Call Stack.
 Hãy xem điều gì xảy ra trong quá trình code thực thi.
@@ -132,12 +139,12 @@ Vậy Call Stack trong JS là gì?
 Call Stack nó giống như là bản ghi log của quá trình thực thi chương trình hiện tại.
 Trong thực tế nó là 1 cấu trúc dữ liệu: 1 stack.
 Vậy chính xác thì Call Stack hoạt động thế nào?
-KHông ngạc nheien là nó có 2 phương thức: push và pop. 
+KHông ngạc nhiên là nó có 2 phương thức: push và pop. 
 Pushing là hành động đặt 1 thứ gì đó vào stack
 Đó là khi khi bạn chạy 1 hàm JS, engine sẽ push hàm đó vào Call Stack
 Mỗi lời gọi hàm sẽ bị đẩy vào Call Stack.
 Thứ đầu tiên bị đẩy vào là hàm main()(hay global()), luồng thực thi chính của ứng dụng JS.
-Giờ bức ảnh ảnh trước sẽ trông như thế này.
+Giờ bức ảnh trước sẽ trông như thế này.
 
 Poping là hành động ngược lại là xóa thứ gì đó khỏi stack.
 Khi 1 hàm thực thi xong, nó sẽ bị xóa khỏi Call Stack.
